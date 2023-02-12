@@ -1,0 +1,18 @@
+*************************************************************************
+* Upanshu Parekh                                             CSC122-001 *
+*                 Lab: Now where'd I put that                           *
+*                                                                       *
+* This program shows the use of find functions which take in a base     *
+* string to be searched, along with a char/string to look for. It will  *
+* search the base for it, and then return that int index where it was   *
+* found, or std::string::npos if it was not found.                      *
+*                                                                       *
+* Base Level: 2                                                         *
+* Options Chosen:                                                       *
+*   Level 1: Case-sensitivit argument.                                  *
+*   Level 2: User can use wildcards to represent 0+ chars, and ?        *
+*            to represent 1 char. Escape sequence char '/' added.       *
+*   Level 3: User can use multiple wildcards in one input string.       *
+* Total Level: 2+1+2+3 = 8                                              *
+*************************************************************************
+

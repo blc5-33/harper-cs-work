@@ -1,0 +1,61 @@
+*************************************************************************
+1. How do you compare two characters without reference to case?
+How might you do this without destroying the character
+variable(s) contents?
+
+The way I would go about comparing two chars without reference to case
+and without destroying the char variable's contents, is by using
+the |tolower()| function from the <cctype> library and then using the
+== comparison operator. tolower() returns the lowercase character but
+importantly does not change that character that is put in. This will
+avoid destroying the character variable's contents.
+
+*************************************************************************
+2. How can you compare two strings in a case-insensitive way without
+destroying their contents? (You should not change the strings in order
+to compare them!)
+
+To compare two strings, I would just iterate through the string up to
+the size of the string with fewer characters and then compare the two
+string's characters using the method above as it is iterating.
+If function encounters a character from s1 that is greater 
+than one from s2, it will automatically flag the s1 string as s1 > s2
+and return a + value. Vice versa for - value. If it the characters are
+equal to each other, they will keep going until the end of the string
+or until one of the triggers for + or - activates.
+
+If there is no differing character til the end of the shorter string,
+then the longer string will be considered "greater".
+
+*************************************************************************
+3. What kind of arguments should your string comparison function take?
+(Value, reference, constant?)
+
+The comparison function should take 2 string arguments that are constant
+and passed by reference, as we are not going to be touching their data.
+
+*************************************************************************
+4. How do you get that weird return value for your function?
+Is it always -1, 0, 1? Or is there a reason it was defined as simply
+less than 0, 0, or greater than 0?
+
+To get that weird return value, I subtract the char from the 2nd string
+from the char from the 1st string: s1[0] - s2[0], and then cast it to
+int. It still follows the sign rules laid out, but it takes into account
+the exact ASCII equivalent difference between the character.
+
+This number is not usually relevant, as most of the time we're only
+interested in the comparison result itself, not the exact ASCII
+equivalent differences.
+
+*************************************************************************
+5. How many times will you need to call your function to test it
+thoroughly? How many times should you have to run the driver to do this
+testing?
+
+In my driver program file, I'll only need to compare two strings once,
+but I'll need to run the driver 5 times to get a full test of the
+function, ensuring to test the case-insensitivity.
+Once for the -, 0, and + cases with a string of the same length but
+differing cases on the characters, and then 2 more for case-insensitive
+comparisons of strings with different lengths, ensuring a - and = result.

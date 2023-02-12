@@ -1,0 +1,13 @@
+*************************************************************************
+* Upanshu Parekh                                             CSC122-001 *
+*                   Lab: "Hi" == "hi"?                                  *
+*                                                                       *
+*  In this lab I designed a function that is a case-insensitive version *
+* of the |strcmp()| function found in the <cstring> library. It works   *
+* almost the exact same way as the original function, with the same     *
+* return value rules as defined in the standard, again just accounting  *
+* for the case-insensitivity.                                           *
+*                                                                       *
+* Project Base Level: 1.5                                               *
+*   No options attempted.                                               *
+*************************************************************************

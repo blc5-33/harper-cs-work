@@ -1,0 +1,52 @@
+pits
+char: I
+
+dumb bunnies
+char: `
+
+-------------
+Strings
+
+dumb bunnies
+string: b bunn
+
+dumb bunnies
+u??Ie
+
+dumb bunnies
+??zz
+
+The quick brown fox
+*T
+
+The quick brown fox
+*N
+
+The quick brown fox
+u*n
+
+The quick brown fox
+u*z
+
+The quick brown fox
+x*
+
+The quick brown fox
+h*i*b*n
+
+The quick brown fox
+h*i*b*z
+
+The quick brown fox
+h*i?k
+
+The quick brown fox
+h*i??k
+
+Is the fox quick? Not sure* Who knows?
+quick/?
+
+Is the fox quick? Not sure* Who knows?
+sure/*
+
+

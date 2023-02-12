@@ -1,0 +1,70 @@
+for (sz_tp i = 0; i < baseLength; ++i)
+    {
+        substringIndex = i;
+        done = true;
+
+        for (sz_tp k = 0; k < inputLength && done; ++k)
+        {
+            //escape sequence detection
+            if (input[k] != '/')
+            {
+                if (input[k] == '*')
+                {
+                    if (k == inputLength - 1)
+                    {
+                        return i;
+                    }
+                    // if * at the end, who cares what the rest is?
+
+                    //if char after * is ?
+                    //then it's 0 chars until next valid char
+                    while ( ( (caseSensitive 
+                               && input[k+1] != base[substringIndex])
+                        || (!caseSensitive 
+                            && tolower(input[k+1])
+                               != tolower(base[substringIndex])) ) 
+                        && input[k+1] != '?' )
+                    {
+                        if (substringIndex == baseLength - 1)
+                        {
+                            return string::npos;
+                        } // stop if it cannot find the 
+                          //char after wildcard
+                        
+                        ++substringIndex;
+                        //keep iterating until it does find next 
+                        //char after wildcard in base string
+                    }
+                }
+                else if ( ( (caseSensitive 
+                            && input[k] != base[substringIndex])
+                    || (!caseSensitive 
+                        && tolower(input[k]) 
+                           != tolower(base[substringIndex])) )
+                    && input[k] != '?' )
+                {
+                    done = false;
+                }
+                else
+                {
+                    ++substringIndex;
+                }
+            }
+            else
+            {
+                ++k;
+                if (input[k] != base[substringIndex])
+                {
+                    done = false;
+                }
+                else
+                {
+                    ++substringIndex;
+                }
+            }
+        }
+        if (done)
+        {
+            return i;
+        }
+    }

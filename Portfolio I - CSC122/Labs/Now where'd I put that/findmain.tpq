@@ -1,0 +1,88 @@
+*************************************************************************
+
+1. What arguments does each find function take? Are they changed?
+What special care should you take with them?
+
+Each find function must take in a base string that will be searched.
+The second argument must be the phrase to find within that string.
+One must take in a char, while the other must take in a string.
+The special care I should take is that I need to make one search function
+that works with the char variant, and another different, but related 
+search function that works with the string variant.
+
+*************************************************************************
+
+2. What value is returned by your functions? What type is it and what 
+does it represent?
+
+The functions will return an |int| index position of the base string 
+where the char or string phrase occurred. If it failed to find an 
+occurence of the char/string, it will return an |int| value of -1.
+
+*************************************************************************
+
+3. What care does a caller of your functions have to take with
+this return value?
+(i.e. Can they immediately assume it is a valid index?)
+
+The caller of my function has to know that it will not return 
+a valid index 100% of the time. If the char/string could not be found,
+it will return -1. If that caller assumes a valid index
+was going to be printed, they would run into nasty IndexOutOfBounds
+exceptions, or worse.
+
+*************************************************************************
+
+4. How does the compiler distinguish which of your functions is 
+being used for a particular call?
+(They have the same name, after all...)
+
+It wil distinguish my functions from each other by checking their 
+signatures. In this case, the return types will be the same, as will the 
+type of the first paramater (the string to
+be searched), but the second parameter will be either a |char| or 
+|string|. Whichever one is included in the function call will run either 
+the char-corresponding |find| function or the string-corresponding |find|
+function.
+
+*************************************************************************
+
+5. How do you protect your library from being circularly included?
+
+I can use definitions as such:
+#ifndef STREXTRA_H_INCLUDE
+#define STREXTRA_H_INCLUDE
+// ... header file interface in between ...
+#endif
+
+Alternatively, I can just type:
+#pragma once
+This is what I will use.
+
+*************************************************************************
+
+6. What changes are needed in your main application 
+(the test application here) to get it to work with the library? What 
+about the compiling process?
+
+I need to ensure that the library header file is included with the 
+directive:
+#include "strextra.h"
+That's it for what the main application needs in terms of code-wise.
+
+When it is being compiled, I need to ensure that I add the corresponding 
+strextra.cpp file which contains the definitions of the functions in the 
+header file.
+
+*************************************************************************
+
+7. How many files does your library consist of? What are they? 
+Which one(s) do you #include?
+
+My library consists of 2 files: the interface file |strextra.h| and the
+implementation/definition file |strextra.cpp|.
+In the |findmain.cpp| main file, I include the header file 
+via #include "strextra.h"
+
+
+*************************************************************************

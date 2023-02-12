@@ -1,0 +1,15 @@
+*************************************************************************
+* Upanshu Parekh                                             CSC122-001 *
+*                   Project: Let's MAP it out...                        *
+*                                                                       *
+*   This program allows users to essentially play City Management       *
+* Simulator! Users can (1) add cities with a 20-or-less character name  *
+* and an x-y coordinate location, (2) calculate distances between their *
+* added cities and (3) print out a list of cities that they have added. *
+*                                                                       *
+*   Project Base Level: 4                                               *
+*   Options Selected: Option 1 (Accept String or #)                     *
+*                       Lvl: 2                                          *
+*   Total Project Level: 6                                              *
+*************************************************************************
+
